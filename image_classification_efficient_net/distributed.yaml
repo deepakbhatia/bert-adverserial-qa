@@ -1,0 +1,15 @@
+name: efficient_b0_tf_keras_distributed
+hyperparameters:
+  learning_rate: 1.0e-4
+  learning_rate_decay: 1.0e-3
+  dropout_rate: 0.2
+  global_batch_size: 24
+resources:
+  slots_per_trial: 2 # Use 2 GPUs to train the model.
+searcher:
+  name: single
+  metric: val_accuracy
+  smaller_is_better: false
+  max_length:
+    batches: 3000
+entrypoint: model_def:EfficientNetTrial

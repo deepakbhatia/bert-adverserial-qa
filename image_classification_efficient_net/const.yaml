@@ -1,0 +1,13 @@
+name: efficient_tf_keras_const
+hyperparameters:
+  learning_rate: 1.0e-4
+  learning_rate_decay: 1.0e-3
+  dropout_rate: 0.2
+  global_batch_size: 24
+searcher:
+  name: single
+  metric: val_accuracy
+  smaller_is_better: false
+  max_length:
+    batches: 2000
+entrypoint: model_def:EfficientNetTrial
